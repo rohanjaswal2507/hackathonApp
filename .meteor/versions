@@ -51,6 +51,7 @@ ddp-rate-limiter@1.0.2
 ddp-server@1.2.4
 deps@1.0.10
 diff-sequence@1.0.3
+drewy:autoform-datetimepicker@1.0.666666
 ecmascript@0.4.1
 ecmascript-runtime@0.2.8
 ejson@1.0.9
@@ -119,6 +120,7 @@ standard-minifier-js@1.0.4
 templating@1.1.7
 templating-tools@1.0.2
 tracker@1.0.11
+tsega:bootstrap3-datetimepicker@4.17.37_1
 twbs:bootstrap@3.3.6
 ui@1.0.9
 underscore@1.0.6

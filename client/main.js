@@ -56,7 +56,8 @@ Template.eventList.helpers({
     date = Session.get("current_date");
     date = Date.parse(date);
     date = date.toString();
-    eventList = Events.find({startTime: {$gt: date}}, {"sort" : {'startTime':1}} );
+    eventList = Events.find({});
+
     return eventList;
   }
 });
