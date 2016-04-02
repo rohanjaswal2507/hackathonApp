@@ -30,3 +30,5 @@ aldeed:autoform
 standard-minifier-css
 standard-minifier-js
 yogiben:autoform-file
+tsega:bootstrap3-datetimepicker
+drewy:autoform-datetimepicker
