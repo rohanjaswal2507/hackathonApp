@@ -1,0 +1,24 @@
+<template name="addEventForm">
+  <div class="container eventDabba">
+    <div class="col-md-6">
+      {{#autoForm collection="Events" id="addEventForm" type="method" meteormethod="addEvent"}}
+      <fieldset>
+        <legend>Post a new Event</legend>
+        {{> afQuickField name='title'}}
+        {{> afQuickField name='description' rows=3 placeholder="A little description of the event"}}
+        {{> afQuickField name='eventid' value=eventid type="hidden"}}
+        {{> afQuickField name='addedOn' value=current_date type="hidden"}}
+        {{> afQuickField name='venue' placeholder="For e.g. Audi, CC"}}
+        {{> afQuickField name="startTime" type="datetimepicker"}}
+        {{> afQuickField name="endTime" type="datetimepicker"}}
+        {{> afQuickField name='targetAudience' placeholder="For e.g. First year, CSE and ECE"}}
+        {{> afQuickField name="author" type="hidden" value=author}}
+        {{> afQuickField name="contactPerson" placeholder="Name of the Person"}}
+        {{> afQuickField name="contactNumber"}}
+        {{> afQuickField name="poster" class="file fileInput"}}
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Post</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
