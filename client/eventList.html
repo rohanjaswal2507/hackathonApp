@@ -7,11 +7,11 @@
 <div class="container-fluid">
   {{#each events}}
   <div class="col-sm-3" id="e">
-    <a href="https://google.com">
+    <a href="/event/{{_id}}">
     <div class="event">{{title}}</div>
-    <div class="desc">{{description}}<br>Date: {{startTime}}</div>
+    <div class="desc"><br><h3>Date: {{> eventDate eDate=startTime}}</h3></div>
     <div class="photos">
-      <img src="image.jpg" alt="Event image" width="278" height="210">
+      <img src="{{posterUrl poster}}" alt="Event image" width="278" height="210">
     </div>
     </a>
   </div>
