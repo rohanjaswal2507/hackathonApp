@@ -1,46 +1,141 @@
 <template name="eventPage">
-<div class="container" >
+    {{#with eventData}}
+    {{> eventPoster title=title poster=poster}}
+    <div class="container" id="duration">
+      <div class="table-responsive">
+        <table class="table table-nonfluid">
+          <thead>
+            <tr>
+              <th> Starts @</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th> Ends @ </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <big>{{> eventDate eDate=startTime}}, {{calStartTime}} </big></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td> <big>{{> eventDate eDate=endTime}}, {{calEndTime}}</big></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container" id="nonfluidContainer">
+      <div class="container col-sm-8" id="eventDescriptor">
+        <div class="row" id="descriptionHeading">
+          <h3>Description</h3>
+        </div>
+        <hr>
+        <div class="row" id="descriptionContent">
+          {{description}}
+        </div>
+      </div>
+      
+      <div class="col-sm-1"></div>
 
-  <div class="jumbotron">
-    <button id="b1">Register Now >></button>
+      <div class="container col-sm-3" id="venue">
+
+        <div class="container col-sm-12" id="eventDescriptor">
+          <div class="row" id="descriptionContent">
+            <h4>Target Audience: <strong>{{targetAudience}}</strong></h4>
+          </div>
+        </div>
+
+        <div class="container col-sm-12" id="eventDescriptor">
+          <div class="row" id="descriptionHeading">
+            <h4>Venue</h4>
+          </div>
+          <hr>
+          <div class="row" id="descriptionContent">
+            <h3>{{venue}}</h3>
+          </div>
+        </div>
+
+        <div class="container col-sm-12" id="eventDescriptor">
+         <div class="row" id="descriptionHeading">
+           <h3>Contact</h3>
+        </div>
+        <hr>
+        <div class="row" id="descriptionContent">
+          <h4> <big>{{contactPerson}}</big><br>
+               {{contactNumber}} </h4>
+        </div>
+      </div>
+
+      </div>
+    </div>
+    {{/with}}
+    <script id="dsq-count-scr" src="//nitheventsportal.disqus.com/count.js" async></script>
+</template>
+
+
+
+<!-- Small Templates -->
+<template name="authorTemplate">
+  {{name inheritedAuthor}}
+</template>
+
+<template name="eventDate">
+  {{day eDate}},
+  {{date eDate}}
+  {{time eDate}}
+</template>
+
+
+<template name="eventPoster">
+  {{#with posterUrl poster}}
+  <header style="background:linear-gradient(
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 1)
+              ),url({{this.url}});
+              background-size:cover;
+              background-position:center;">
+    <div class="header-content">
+      <div class="header-content-inner">
+        <h1>{{this.title}}</h1>
+      </div>
+    </div>
+  </header>
+  {{/with}}
+</template>
+
+
+<template name="eventTiming">
+  <div class="container" id="duration">
+    <div class="table-responsive">
+      <table class="table table-nonfluid">
+        <thead>
+          <tr>
+            <th> Starts @</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th> Ends @ </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>{{calStartTime}}</strong> </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> {{> eventDate eDate=endTime}}  <strong>{{calEndTime}}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="row">
-    <div class="col-md-3" id="overview">
-      <h3><strong>About</strong> </h3>
-      <p>Event Owner: Team .EXE</p>
+</template>
 
-    </div>
-    <div class="col-md-3" id="overview">
-      <h3><strong>Details</strong></h3>
-      <ul>
-
-        <li>Coding event</li>
-        <li></li>
-        <li>Exiting Prices</li>
-      </ul>
-    </div>
-
-    <div class="col-md-3" id="overview">
-      <h3><strong>OverView</strong></h3>
-      <p>Started On : <b> hh:mm </b> </p>
-      <p>Closes On : <b> hh:mm </b> </p>
-      <p>Location : <b> Auditorium </b> </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h3><strong> Detailed Description </strong></h3>
-      <p> </p>
-      <p> </p>
-    </div>
-
-    <div class="col-md-4">
-      <h3><strong>Rules</strong></h3>
-      <p> </p>
-      <p> </p>
-    </div>
-
-  </div>
-</div>
+<template name="myFilePreview">
+  <a href="{{file.url}}">{{file.original.name}}</a>
 </template>
