@@ -24,7 +24,7 @@ Router.route('/addEvent', function(){
   if(Meteor.userId()){
     this.render("addEventForm", {to:"main"});
   } else {
-    this.render("loginForm", {to:"main"});
+    this.render("login", {to:"main"});
   }
 });
 
@@ -37,6 +37,9 @@ Router.route('/editEvent/:_id', function(){
   }
 });
 
+Meteor.setInterval(function(){
+  Session.set("current_date", new Date());
+}, 1000);
 
 // EventPage Template helpers
 
@@ -126,7 +129,7 @@ Template.eventList.helpers({
     date = Session.get("current_date");
     date = Date.parse(date);
     date = date.toString();
-    eventList = Events.find({});
+    eventList = Events.find({startTime: {$gt: date}}, {"sort" : {'startTime':1}});
 
     return eventList;
   },
