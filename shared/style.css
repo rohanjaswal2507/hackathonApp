@@ -181,7 +181,7 @@ header .header-content .header-content-inner h1 {
 }
 #heading{
    height: 200px;
-   background-color: #2B3856;
+   background: linear-gradient(to right, #2B3856 , #342D7E);;
    color: #FFFFFF;
    padding-left: 30px;
    font-family: "Times New Roman";
@@ -193,6 +193,7 @@ header .header-content .header-content-inner h1 {
    border-radius: 5px;
    margin-right: 5px;
    margin-left: 20px;
+   margin-bottom: 20px;
  }
 
 .photos{
@@ -205,12 +206,12 @@ header .header-content .header-content-inner h1 {
 .event{
    position: absolute;
    left: 0;
-   height: 40px;
+   height: 30px;
    width: 100%;
-   border-top-left-radius: 5px;
-   border-top-right-radius: 5px;
+   border-top-left-radius: 4px;
+   border-top-right-radius: 4px;
    background-color: #4C4646;
-   padding:3px 0px 2px 5px;
+   padding:3px 0px 3px 5px;
    font-size: 20px;
    font-family: verdana,Geneva,sans-serif;;
    color: #FFFFFF;
@@ -218,8 +219,28 @@ header .header-content .header-content-inner h1 {
 
 .desc{
    position: absolute;
-   top: 300px;
+   top: 250px;
+   font-size: 15px;
 }
+
+#Going{
+    position:absolute;
+    top: 370px;
+}
+
+#Interested{
+    position: absolute;
+    top: 370px;
+    left: 85px;
+}
+
+#Not{
+  position: absolute;
+  top: 370px;
+  left: 180px;
+}
+/* Prerna */
+
 
 #col-1{
 	border: 2px solid red;
